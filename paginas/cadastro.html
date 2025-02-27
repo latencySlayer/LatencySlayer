@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro/Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="formulario login">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input">
+                    <input type="text" placeholder="Nome de usuário" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Senha" required>
+                    <i class='bx bx-lock' ></i>
+                </div>
+                <div class="esqueci_senha">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+                <button type="button" class="btn">Login</button>
+            </form>
+        </div>
+
+
+        <div class="formulario cadastrar">
+            <form action="">
+                <h1>Cadastrar</h1>
+                <div class="input">
+                    <input type="text" placeholder="CPF" required>
+                    <i class='bx bx-info-circle' ></i>
+                </div>
+                <div class="input">
+                    <input type="email" placeholder="E-mail" required>
+                    <i class='bx bxl-gmail' ></i>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Senha" required>
+                    <i class='bx bx-lock' ></i>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Confirme a sua senha" required>
+                    <i class='bx bx-lock' ></i>
+                </div>
+              
+                <button type="button" class="btn">Cadastrar</button>
+            </form>
+        </div>
+
+
+        <div class="alternar_formulario">
+            <div class="alternar_informacao alternar_esquerda">
+                <h1>Olá, seja bem vindo!</h1>
+                <p>Não possui uma conta ainda?</p>
+                <button class="btn btn_cadastro">Cadastre-se</button>
+            </div>
+        </div>
+
+        <div class="alternar_formulario">
+            <div class="alternar_informacao alternar_direita">
+                <h1>Ola novamente!</h1>
+                <p>Já possui uma conta ainda?</p>
+                <button class="btn btn_login">Login</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="./script/cadastro.js"></script>
+</body>
+</html>
