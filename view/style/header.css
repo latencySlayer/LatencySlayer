@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.navBar{
+    color: white;    display: flex;
+    width: 100vw;
+    height: 100px;
+    justify-content: space-between;
+    margin: 0 10px 0 10px;
+    position: fixed;
+}
+
+.navBar a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    align-self: center;
+    transition: 0.3;
+}
+
+.navBar a:hover{
+    border-bottom: 4px solid #56408C;
+    transition : 0.3s;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.containerBotoes{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;align-self: center;
+}
+
+.botoesHeader{
+    align-self: center;
+    padding-right: 10%;
+}
+
+.botoesHeader button{
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+
+.botoesHeader button:nth-of-type(1){
+    background-color: #817E88;
+}
+
+.botoesHeader button:nth-of-type(2){
+    background-color: #56408C;
+}
+
+.botoesHeader button:nth-of-type(1):hover{
+    transition: 0.3s;
+    background-color: #bdb9c6;
+}
+
+.botoesHeader button:nth-of-type(2):hover{
+    transition: 0.3s;
+    background-color: #7b5dc8;
+}
