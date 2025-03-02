@@ -2,7 +2,11 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "DM Sans", serif;
+}
+
+.purple{
+    color: #56408C;
 }
 
 
@@ -13,6 +17,8 @@
     justify-content: space-between;
     margin: 0 10px 0 10px;
     position: fixed;
+    z-index: 2;
+    font-family: "Poppins", serif;
 }
 
 .navBar a{
@@ -43,13 +49,14 @@
 
 .botoesHeader{
     align-self: center;
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 .botoesHeader button{
     color: white;
     border: none;
     padding: 10px;
+    width: 100px;
     border-radius: 10px;
     cursor: pointer;
     padding: 15px;
