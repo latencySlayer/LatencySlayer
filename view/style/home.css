@@ -181,7 +181,6 @@ h1{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
     background-color: #F9F9F9;
     height: 100vh;
     width: 100vw;
@@ -195,19 +194,41 @@ h1{
 
 .containerSobre img{
     width:500px;
-    height: 40%;
+    height: 80%;
     box-shadow: -80px 40px #3A2E5D;  
     border-radius: 10px;
     
 }
-
 .elementsSobre{
+    display: flex;
+    margin-top: 10vh;
     margin-left: 10vw;
+    height: 60vh;
+    width: 85vw;
+    gap: 4vw;
+    
+}
+.sobreText{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 50vh;
+    width: 60vw;
 }
 
-.sobreText{
-    text-align: start;
-    display: flex;
-    justify-content: start;
-    align-items: start;
+.sobreText h3{
+    font-size: 25px;
+    font-family: "Poppins",serif;
+}
+
+.btnPurple{
+    align-self: center;
+    font-weight: bold;
+    background-color: #3A2E5D;
+    margin-top: 2vh;
+    color: #F9F9F9;
+    width: 12vw;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
 }
