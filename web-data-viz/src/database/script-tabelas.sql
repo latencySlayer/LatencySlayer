@@ -6,57 +6,53 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE latencySlayer;
 
-USE aquatech;
+USE latencySlayer;
+
+
+CREATE TABLE endereco(
+	idEndereco INT PRIMARY KEY AUTO_INCREMENT,
+	CEP CHAR(8),
+	numero INT,
+	rua VARCHAR(100)
+);
 
 CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(45),
+	codigo char(9),
+	empresaMatriz INT,
+	fkEndereco INT,
+	FOREIGN KEY (fkEndereco) REFERENCES endereco (idEndereco)
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE usuarios (
+	idUsuarios INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
+	cpf CHAR(11),
+	cargo VARCHAR(50),
 	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+	fkempresa INT,
+	FOREIGN KEY (fkempresa) REFERENCES empresa(idEmpresa)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-);
+INSERT INTO endereco (CEP, numero, rua) VALUES
+(05668791, 78, 'Rua Augusta');
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
-);
+INSERT INTO empresa VALUES
+(DEFAULT, 'Gamestech', '10E98WD45', NULL, 1);
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+INSERT INTO usuarios VALUES
+(DEFAULT, 'Gabriel Atlântico','gabriel.oceano@gmail.com', 'Biel08_', 1);
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+SELECT idEmpresa, nome, codigo from empresa;
+
+INSERT INTO usuarios (nome, email, cpf, cargo, senha, fkEmpresa) VALUES
+('Juliana Silva','juliana.silva@gmail.com', 12343256789,'Gestor' ,'julia20_', 1);
+
+
+INSERT INTO usuarios (nome, email, cpf, cargo, senha, fkEmpresa) VALUES ('maria', 'eduarda@gmail.com', '34543445678', 'Suporte', '12
+drop table usuarios;

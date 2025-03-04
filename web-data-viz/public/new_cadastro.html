@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./style/cadastro.css">
 </head>
-<body>
+<body onload="listarEmpresas()">
 
     <div class="container">
         <div class="formulario login">
@@ -33,23 +33,27 @@
             <form action="">
                 <h1>Cadastrar</h1>
                 <div class="input">
-                    <input type="text" placeholder="Nome" required>
+                    <input id="nome_ipt" type="text" placeholder="Nome" required>
                     <i class='bx bx-info-circle' ></i>
                 </div>
                 <div class="input">
-                    <input type="email" placeholder="E-mail" required>
+                    <input id="email_ipt" type="email" placeholder="E-mail" required>
                     <i class='bx bxl-gmail' ></i>
                 </div>
                 <div class="input">
-                    <input type="co" placeholder="CPF" required>
+                    <input id="cpf_ipt" type="co" placeholder="CPF" required>
                     <i class='bx bxl-gmail' ></i>
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Codigo Empresa" required>
+                    <input id="cargo_ipt" type="co" placeholder="Cargo" required>
+                    <i class='bx bxl-gmail' ></i>
+                </div>
+                <div class="input">
+                    <input id="codigo_ipt" type="text" placeholder="Codigo Empresa" required>
                     <i class='bx bx-lock' ></i>
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Senha" required>
+                    <input id="senha_ipt" type="text" placeholder="Senha" required>
                     <i class='bx bx-lock' ></i>
                 </div>
                 <!-- <div class="input">
@@ -57,7 +61,7 @@
                     <i class='bx bx-lock' ></i>
                 </div> -->
               
-                <button type="button" class="btn">Cadastrar</button>
+                <button onclick="cadastrar()" type="button" class="btn">Cadastrar</button>
             </form>
         </div>
 
@@ -85,3 +89,79 @@
     <script src="./script/cadastro.js"></script>
 </body>
 </html>
+<script>
+    let  arrayEmpresas = [];
+
+    function cadastrar() {
+       var nomeVar = nome_ipt.value;
+       var emailVar = email_ipt.value;
+       var cpfVar = cpf_ipt.value;
+       var cargoVar = cargo_ipt.value;
+        var codigoVar = codigo_ipt.value;
+        var senhaVar = senha_ipt.value;
+        var idEmpresaVincular;
+
+        for (let i = 0; i < arrayEmpresas.length; i++) {
+            if (arrayEmpresas[i].codigo == codigoVar) {
+                idEmpresaVincular = arrayEmpresas[i].idEmpresa
+                console.log("Codigo valido")
+            }else{
+                console.log("Codigo Invalido")
+            }
+            
+        }
+
+        fetch('/usuarios/cadastrar', {
+            method: 'POST',
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                cpfServer: cpfVar,
+                cargoServer: cargoVar,
+                senhaServer: senhaVar,
+                idEmpresaVincularServer: idEmpresaVincular
+            })
+        }).then(function(resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("Dados Cadastrados")
+            
+            }else{
+                throw "erro ao tentar realizar o cadastro!";
+            }
+
+        }).catch(function(resposta){
+            console.log("ERRO;", resposta)
+        })
+    }
+
+function listarEmpresas(){
+
+        fetch("/empresas/listar", {
+            method: 'GET',
+        })
+        .then(function(resposta){
+            resposta.json().then(function(json){
+                console.log(json)
+                json.forEach((empresa) => {
+                    arrayEmpresas.push(empresa)
+                    console.log(resposta.ok)
+                    console.log(arrayEmpresas[0].codigo)
+                });
+            })
+
+        }).catch (function(resposta){
+            console.log(resposta)
+        })
+    }
+
+
+   
+</script>
+<script>
+    
+</script>
