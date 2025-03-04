@@ -50,6 +50,9 @@ INSERT INTO usuarios VALUES
 
 SELECT idEmpresa, nome, codigo from empresa;
 
+SELECT nome, email, cargo, senha, fkempresa from usuarios;
+SELECT nome, email, cargo, senha, fkempresa from usuarios WHERE email = 'maria@mail.com';
+
 INSERT INTO usuarios (nome, email, cpf, cargo, senha, fkEmpresa) VALUES
 ('Juliana Silva','juliana.silva@gmail.com', 12343256789,'Gestor' ,'julia20_', 1);
 

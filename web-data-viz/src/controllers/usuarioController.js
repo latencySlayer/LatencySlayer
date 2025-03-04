@@ -3,6 +3,9 @@ var usuarioModel = require("../models/usuarioModel");
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    console.log('SSSSSSSSSSSSSS')
+    console.log(email)
+    console.log(senha)
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -18,24 +21,19 @@ function autenticar(req, res) {
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
-
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
                                     res.json({
-                                        id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                        aquarios: resultadoAquarios
+                                        cargo: resultadoAutenticar[0].cargo,
+                                        fkempresa: resultadoAutenticar[0].fkempresa,
+                                        senha: resultadoAutenticar[0].senha
                                     });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
-                            })
+                                
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
-                    } else {
+                    } 
+                    
+                    else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
                     }
                 }
@@ -67,6 +65,9 @@ function cadastrar(req, res) {
     } else if (fkEmpresa == undefined) {
         res.status(400).send("Sua empresa a vincular está undefined!");
     } else {
+        
+        // Select de validação de email
+        /* Passou? entao cadastra /// Não passou? então retorna pro front o erro  */
 
         usuarioModel.cadastrar(nome, email, cpf, cargo, senha, fkEmpresa)
             .then(

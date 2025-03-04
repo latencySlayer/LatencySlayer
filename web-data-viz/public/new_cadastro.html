@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./style/cadastro.css">
 </head>
+
 <body onload="listarEmpresas()">
 
     <div class="container">
@@ -14,17 +16,17 @@
             <form action="">
                 <h1>Login</h1>
                 <div class="input">
-                    <input type="text" placeholder="Nome de usuário" required>
+                    <input id="email_ipt" type="text" placeholder="Email do usuário" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Senha" required>
-                    <i class='bx bx-lock' ></i>
+                    <input id="senha_ipt" type="text" placeholder="Senha" required>
+                    <i class='bx bx-lock'></i>
                 </div>
                 <div class="esqueci_senha">
                     <a href="#">Esqueceu a senha?</a>
                 </div>
-                <button type="button" class="btn">Login</button>
+                <button onclick="entrar()" type="button" class="btn">Login</button>
             </form>
         </div>
 
@@ -34,33 +36,33 @@
                 <h1>Cadastrar</h1>
                 <div class="input">
                     <input id="nome_ipt" type="text" placeholder="Nome" required>
-                    <i class='bx bx-info-circle' ></i>
+                    <i class='bx bx-info-circle'></i>
                 </div>
                 <div class="input">
-                    <input id="email_ipt" type="email" placeholder="E-mail" required>
-                    <i class='bx bxl-gmail' ></i>
+                    <input id="email_ipt2" type="email" placeholder="E-mail" required>
+                    <i class='bx bxl-gmail'></i>
                 </div>
                 <div class="input">
                     <input id="cpf_ipt" type="co" placeholder="CPF" required>
-                    <i class='bx bxl-gmail' ></i>
+                    <i class='bx bxl-gmail'></i>
                 </div>
                 <div class="input">
                     <input id="cargo_ipt" type="co" placeholder="Cargo" required>
-                    <i class='bx bxl-gmail' ></i>
+                    <i class='bx bxl-gmail'></i>
                 </div>
                 <div class="input">
                     <input id="codigo_ipt" type="text" placeholder="Codigo Empresa" required>
-                    <i class='bx bx-lock' ></i>
+                    <i class='bx bx-lock'></i>
                 </div>
                 <div class="input">
-                    <input id="senha_ipt" type="text" placeholder="Senha" required>
-                    <i class='bx bx-lock' ></i>
+                    <input id="senha_ipt2" type="text" placeholder="Senha" required>
+                    <i class='bx bx-lock'></i>
                 </div>
                 <!-- <div class="input">
                     <input type="text" placeholder="Confirme a sua senha" required>
                     <i class='bx bx-lock' ></i>
                 </div> -->
-              
+
                 <button onclick="cadastrar()" type="button" class="btn">Cadastrar</button>
             </form>
         </div>
@@ -78,45 +80,48 @@
             <div class="alternar_informacao alternar_direita">
                 <h1>Ola novamente!</h1>
                 <p>Já possui uma conta ainda?</p>
-                <button class="btn btn_login">Login</button>
+                <button onclick="entrar()" class="btn btn_login">Login</button>
             </div>
         </div>
     </div>
-    
+
 
 
 
     <script src="./script/cadastro.js"></script>
 </body>
+
 </html>
 <script>
-    let  arrayEmpresas = [];
+    // --------------- Sessão Cadastro -----------------
+
+    let arrayEmpresas = [];
 
     function cadastrar() {
-       var nomeVar = nome_ipt.value;
-       var emailVar = email_ipt.value;
-       var cpfVar = cpf_ipt.value;
-       var cargoVar = cargo_ipt.value;
+        var nomeVar = nome_ipt.value;
+        var emailVar = email_ipt2.value;
+        var cpfVar = cpf_ipt.value;
+        var cargoVar = cargo_ipt.value;
         var codigoVar = codigo_ipt.value;
-        var senhaVar = senha_ipt.value;
+        var senhaVar = senha_ipt2.value;
         var idEmpresaVincular;
 
         for (let i = 0; i < arrayEmpresas.length; i++) {
             if (arrayEmpresas[i].codigo == codigoVar) {
                 idEmpresaVincular = arrayEmpresas[i].idEmpresa
                 console.log("Codigo valido")
-            }else{
+            } else {
                 console.log("Codigo Invalido")
             }
-            
+
         }
 
         fetch('/usuarios/cadastrar', {
             method: 'POST',
             headers: {
-            "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 cpfServer: cpfVar,
@@ -124,44 +129,78 @@
                 senhaServer: senhaVar,
                 idEmpresaVincularServer: idEmpresaVincular
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 console.log("Dados Cadastrados")
-            
-            }else{
+
+            } else {
                 throw "erro ao tentar realizar o cadastro!";
             }
 
-        }).catch(function(resposta){
+        }).catch(function (resposta) {
             console.log("ERRO;", resposta)
         })
     }
 
-function listarEmpresas(){
+    function listarEmpresas() {
 
         fetch("/empresas/listar", {
             method: 'GET',
         })
-        .then(function(resposta){
-            resposta.json().then(function(json){
-                console.log(json)
-                json.forEach((empresa) => {
-                    arrayEmpresas.push(empresa)
-                    console.log(resposta.ok)
-                    console.log(arrayEmpresas[0].codigo)
-                });
-            })
+            .then(function (resposta) {
+                resposta.json().then(function (json) {
+                    console.log(json)
+                    arrayEmpresas=json
 
-        }).catch (function(resposta){
-            console.log(resposta)
-        })
+
+                    // json.forEach((empresa) => {
+                    //     arrayEmpresas.push(empresa)
+                    //     console.log(resposta.ok)
+                    //     console.log(arrayEmpresas[0].codigo)
+                    // });
+                })
+
+            }).catch(function (resposta) {
+                console.log(resposta)
+            })
     }
 
 
-   
-</script>
-<script>
+
+    // --------------- Sessão Login -----------------
+    function entrar() {
+        var emailVar = email_ipt.value;
+        var senhaVar = senha_ipt.value;
+
+        fetch("/usuarios/autenticar", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function(resposta){
+            console.log("entrei no then do entrar()!!")
+                resposta.json().then(function(json){
+                    console.log(json)
+
+                    sessionStorage.NOME_USUARIO=json.nome;
+                    sessionStorage.EMAIL_USUARIO=json.email;
+                    sessionStorage.CARGO_USUARIO=json.cargo;
+                    sessionStorage.ID_EMPRESA=json.fkempresa;
+
+                    window.location = "./new_home.html"
+
+                })
+            
+        }).catch(function(resposta){
+            console.log(resposta)
+        })
     
+
+    }
 </script>
