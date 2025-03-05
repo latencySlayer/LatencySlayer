@@ -10,18 +10,18 @@
 }
 
 
-.navBar{
+#navBar{
     color: white;    display: flex;
     width: 100vw;
-    height: 100px;
+    height: 13vh;
     justify-content: space-between;
-    margin: 0 10px 0 10px;
     position: fixed;
     z-index: 2;
     font-family: "Poppins", serif;
+    transition: 0.3s;
 }
 
-.navBar a{
+#navBar a{
     text-decoration: none;
     color: #fff;
     font-size: 20px;
@@ -29,10 +29,12 @@
     transition: 0.3;
 }
 
-.navBar a:hover{
+#navBar a:hover{
     border-bottom: 4px solid #56408C;
     transition : 0.3s;
 }
+
+
 
 .logo{
     width: 200px;
@@ -43,8 +45,9 @@
 
 .containerBotoes{
     display: flex;
+    width: 400px;
     justify-content: space-between;
-    width: 300px;align-self: center;
+    align-self: center;
 }
 
 .botoesHeader{
@@ -82,4 +85,10 @@
 .botoesHeader button:nth-of-type(2):hover{
     transition: 0.3s;
     background-color: #7b5dc8;
+}
+
+#navBar.scrolled{
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.8);
+     
 }

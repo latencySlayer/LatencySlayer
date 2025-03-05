@@ -1,5 +1,11 @@
 *{
     font-family: "DM Sans", serif;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -225,6 +231,10 @@ h1{
     width: 60vw;
 }
 
+.sobreText a{
+    align-self: center;
+}
+
 .sobreText h3{
     font-size: 25px;
     font-family: "Poppins",serif;
@@ -254,7 +264,7 @@ h1{
 .containerContato{
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
     gap: 30vw;
 
@@ -289,4 +299,75 @@ h1{
     height: 6vh;
     gap: 30px;
 }
+
+.contatos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contato{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.adress{
+    font-size: 15px;
+    font-weight: 300;
+    color: #767676;
+}
+
+.footer{
+    display: flex;
+    color: white;
+    gap: 60vw;
+    width: 100vw;
+    height: 20vh;
+    background-image: url(../img/tst.png);
+    
+}
+
+.footer .purple{
+    color: #B39AFC;
+}
+
+.txtFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 4vh 5vw;
+}
+
+
+.titleFooter{
+    font-size: 25px;
+    font-family: "Konkhmer Sleokchher", serif;
+}
+
+.footer p{
+    font-size: 12px;
+
+} 
+
+.logos{
+    display: flex;
+    justify-self: flex-end;
+    gap: 4vw;
+    margin-top: 10vh;
+
+}
+
+.logoContato{
+    transition: 0.3s;
+}
+
+.logoContato:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+
+
 
