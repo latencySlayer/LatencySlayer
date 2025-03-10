@@ -1,0 +1,101 @@
+/* Resetando as margens e o padding do body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #EFEFEF;
+}
+
+.div-esquerda {
+    width: 18%; 
+    background-color: #44395F; 
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top-right-radius: 27px; 
+    border-bottom-right-radius: 27px;
+    flex-direction: column; 
+    padding: 20px;
+}
+
+.info-usuario {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.foto-usuario {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+
+.nome-usuario {
+    font-size: 16px; 
+    font-weight: bold; 
+    color: white; 
+}
+
+.botaop {
+    background-color: transparent; 
+    border: 2px  #7b5dc8; 
+    color: #ffffff; 
+    padding: 10px 10px; 
+    margin-bottom: 5px;
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 30px; 
+    display: flex; 
+    align-items: center; 
+    margin: auto;
+    cursor: pointer; 
+    transition: background-color 0.3s , color 0.3s;
+}
+
+.botaop svg {
+    margin-right: 8px; 
+    width: 20px; 
+    height: 20px; 
+    fill: currentColor; 
+}
+
+.botaop:hover {
+    background-color: rgba(0, 123, 255, 0.1); 
+    color: #7b5dc8; 
+    
+}
+
+.botao-sair {
+    margin-top: 10%; 
+    background-color: #e74c3c; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-top-right-radius: 27px; 
+    border-bottom-right-radius: 27px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%; 
+}
+
+.botao-sair:hover {
+    background-color: #c03;
+}
+
+.div-central, .div-direita {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-central {
+    background-color: #EFEFEF; 
+}
+
+.div-direita {
+    background-color: #EFEFEF; 
+}
