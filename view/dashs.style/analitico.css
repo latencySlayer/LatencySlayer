@@ -16,9 +16,11 @@
     display: flex;
     height: 100vh;
     width: 100vw;
-    background-color: #EFEFEF;
+    background-color: #EAEAEA;
+    gap: 2vw;
 }
 
+/* NAVBAR LATERAL */
 .navbarEsq{
     display: flex;
     flex-direction: column;
@@ -43,7 +45,7 @@
 }
 
 .profile .titulo{
-    font-weight: 500;
+    font-weight: bolder;
     font-size: 25px;
 }
 
@@ -98,7 +100,110 @@
     transition: 0.3s;
 }
 
+/* CONTAINER DIREITA */
 .containerDir{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 80vw;
+    gap: 3vh;
+}
+
+/* HEADER */
+.header{
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    height: 5vh;
+    width: 75vw;
+}
+
+.header .titulo{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.cjtInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputPesq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+}
+
+.inputsDados{
+    all:unset;
+    text-align: center;
+    width: 25vw;
+    border-radius: 5px;
+    height: 5vh;
+}
+
+.inputsDados:focus{
+    border: solid 1px black;
+}
+
+.btnHead{
+    all: unset;
+    display: flex;
+    background-color: #44395F;
+    color: white;
+    width: 7vw;
+    height: 4vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btnHead:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #816fa7;
+  
+}
+
+/* KPIS */
+
+
+.kpisSuperior{
+    margin-top: 3vh;
+    display: flex;
+    gap: 5vw;
+}
+
+.kpi{
+    display: flex;
+    padding: 10px 0px 0px 0px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    width: 20vw;
+    height: 15vh;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: -10px 10px #b0b0b07f;  
+}
+
+.kpiData{
+    font-size: 40px;
+    font-weight: bolder;
+    color: #44395F;
+}
+
+.kpisInferior{
+    margin-top: 3vh;
+    justify-content: center;
+    display: flex;
+    gap: 5vw;
 }
