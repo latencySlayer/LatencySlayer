@@ -1,4 +1,4 @@
-/* Resetando as margens e o padding do body */
+
 body {
     margin: 0;
     padding: 0;
@@ -14,39 +14,39 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-top-right-radius: 27px; 
-    border-bottom-right-radius: 27px;
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem;
     flex-direction: column; 
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .info-usuario {
     text-align: center; 
-    margin-bottom: 20px; 
+    margin-bottom: 1.25rem; 
 }
 
 .foto-usuario {
-    width: 80px; 
-    height: 80px; 
+    width: 5rem; 
+    height: 5rem; 
     border-radius: 50%; 
-    margin-bottom: 10px; 
+    margin-bottom: 0.625rem; 
 }
 
 .nome-usuario {
-    font-size: 16px; 
+    font-size: 1rem; 
     font-weight: bold; 
     color: white; 
 }
 
 .botaop {
     background-color: transparent; 
-    border: 2px  #7b5dc8; 
+    border: 0.125rem  #7b5dc8; 
     color: #ffffff; 
-    padding: 10px 10px; 
-    margin-bottom: 5px;
-    font-size: 16px; 
+    padding: 0.625rem 0.625rem; 
+    margin-bottom: 0.313rem;
+    font-size: 1rem; 
     font-weight: bold; 
-    border-radius: 30px; 
+    border-radius: 1.875rem; 
     display: flex; 
     align-items: center; 
     margin: auto;
@@ -55,9 +55,9 @@ body {
 }
 
 .botaop svg {
-    margin-right: 8px; 
-    width: 20px; 
-    height: 20px; 
+    margin-right: 0.5rem; 
+    width: 1.25rem; 
+    height: 1.25rem; 
     fill: currentColor; 
 }
 
@@ -69,31 +69,39 @@ body {
 
 .botao-sair {
     margin-top: 10%; 
-    background-color: #e74c3c; 
-    color: white; 
+    background-color: #dcdcdc; 
+    color: rgb(0, 0, 0); 
     border: none; 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    border-top-right-radius: 27px; 
-    border-bottom-right-radius: 27px;
+    padding: 0.625rem 1.25rem; 
+    font-size: 1rem; 
+    border-radius: 1.688rem;
     cursor: pointer;
     text-align: center;
     width: 100%; 
 }
 
 .botao-sair:hover {
-    background-color: #c03;
+    background-color: rgb(132, 132, 132);
 }
+
 
 .div-central, .div-direita {
     flex: 1; 
     display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .div-central {
     background-color: #EFEFEF; 
+    justify-content: start;
+    align-items: row;
+    margin-left: 0.938rem;
+    margin-top:0.031rem ;
+}
+.div-central h1 {
+
+    color:#44395F; 
+    text-decoration:underline;
 }
 
 .div-direita {
