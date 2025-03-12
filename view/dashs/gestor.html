@@ -1,49 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../dashs.style/gestor.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="../dashs.style/gestor.css">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Konkhmer+Sleokchher&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>LatencySlayer | Gestão</title>
 </head>
 <body>
     <div class="div-esquerda">
-        <div class="info-usuario" class="foto-usuario">
-            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-              </svg> 
-            <p class="nome-usuario">Nelson Roliser</p>
-            <p class="">nelsinho.gestor@EAsports.com</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="opcoes">
-
-                <button onclick="dashs" class="botaop"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07"/>
-                  </svg> dashboards</button>
-
-                    <button onclick="infos" class="botaop"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
-                      </svg> mensagens</button>
-
+            <div class="profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" style="fill: white;"><path d="M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zm-5.106 9.772c.897-1.32 2.393-2.2 4.106-2.2h2c1.714 0 3.209.88 4.106 2.2C15.828 18.14 14.015 19 12 19s-3.828-.86-5.106-2.228z"></path></svg>
+                <span class="titulo2" id="user">User</span>
+                <span class="titulo2" id="email">email@gmail.com</span>
             </div>
-            
+            <div class="btnsNav">
+                <button class="buttonNav"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:white"><path d="M3 5v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2zm16.001 14H5V5h14l.001 14z"></path><path d="M11 7h2v10h-2zm4 3h2v7h-2zm-8 2h2v5H7z"></path></svg> Dashbords </button>
+                <button class="buttonNav"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path><path d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"></path></svg> Notficações </button>
+                <button class="buttonNav"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="M20 3H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 14V5h16l.002 9H4z"></path></svg> Cadastrar máquinas </button>
+            </div>
 
-            <button class="botao-sair">Sair</button>
-
+            <button class="logout">Sair</button>
         </div>
     </div>
+
+
     <div class="div-central">
-        <h1>Gestão de dados</h1>
+        <div class="titulo">
+        <h1>Gestão | Análise de dados</h1>
+        </div>
+        <!--<div class="SV001">troca do select -->
+        <div class="selecao">
+            <h2>Estado de Alertas do
+            <select>
+                <option value="opcao1">SV001</option>
+                <option value="opcao2">SV002</option>
+                <option value="opcao3">SV003</option>
+            </select></h2>
+        </div>
+
+        <div class="kpi-qtd-alertas">
+            <h3>Alertas finalizados:</h3>
+            <div class="alertas-quantidade">
+                <p style="color: green;">15</p>
+                <p style="color: rgb(0, 0, 0);">/</p>
+                <p style="color: rgb(255, 0, 0);">20</p>
+            </div>
+        </div>
+
+        <div class="kpi-aviso">
+            <p>⚠ Servidor em estado crítico </p>
+        </div>
+
+        <div class="grafico">
+            <canvas id="graficoBarras" width="400" height="200"></canvas>
+        </div>
+        <!--</div>-->
     </div>
+
+
+
+
+
+
     <div class="div-direita">
-        <p>Div Direita</p>
+        <div class="selecao2">
+            <h2>Componentes instáveis no
+            <select>
+                <option value="opcao1">SV001</option>
+                <option value="opcao2">SV002</option>
+                <option value="opcao3">SV003</option>
+            </select></h2>
+        </div>
+
+        
+
+        <div class="grafico-podio">
+            <canvas id="graficoPodio" width="400" height="400"></canvas>
+        </div>
+
+    
+
     </div>
 
 </body>
 </html>
+
+
+<script>
+    
+    var ctx = document.getElementById('graficoBarras').getContext('2d');
+    var graficoBarras = new Chart(ctx, {
+        type: 'bar', 
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março'], 
+            datasets: [{
+                label: 'alertas mensais',
+                data: [25, 15, 40], 
+                backgroundColor: 'purple', 
+                borderColor: 'black', 
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+
+<script>
+    var ctx = document.getElementById('graficoPodio').getContext('2d');
+    var graficoPodio = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['CPU', 'RAM', 'DISCO'], 
+            datasets: [{
+                label: 'MAIOR GERADOR DE ALERTAS', 
+                data: [20, 15, 10], 
+                backgroundColor: ['purple', 'silver', 'brown'], 
+                borderColor: ['black', 'silver', 'brown'],
+                borderWidth: 2,
+                borderRadius: 20, 
+                borderSkipped: false, 
+                
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 30, 
+                    ticks: {
+                        stepSize: 10
+                    }
+                },
+                x: {
+                    beginAtZero: true,
+                    
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)', 
+                    titleColor: 'white',
+                    bodyColor: 'white',
+                    padding: 10
+                }
+            }
+        }
+    });
+</script>
