@@ -18,7 +18,7 @@
             <div class="segundaCamada">
                 
                 <div class="cadastrarMaquina">
-                    <button class="btn"><i class='bx bx-plus-circle'></i>Cadastrar Maquina</button>
+                    <button><i class='bx bx-plus-circle'></i>Cadastrar Maquina</button>
                     
 
                     <div class="telaCadastro">
@@ -43,7 +43,7 @@
                         </div>
     
                         <div class="btn_cadastro">
-                            <button id="cadastroBtn" onclick="cadastrar()">Cadastrar</button>
+                            <button id="cadastroBtn" class="btn_tela_cadastro" onclick="cadastrar()">Cadastrar</button>
                         </div>
 
                         
@@ -53,7 +53,7 @@
                 </div>
                 
                 <div class="barraPesquisa">
-                    Pesquisar por código: <input type="text" id="pesquisa"> <i class='bx bx-search-alt-2' ></i>
+                    Pesquisar por código: <input oninput="pesquisa()" type="text" id="ipt_pesquisa"> <i class='bx bx-search-alt-2' ></i>
                 </div>
             </div>
             <hr>
@@ -71,7 +71,23 @@
                         <th>Excluir</th>
                         </tr>
                     </table>
-                   
+                   <div class="telaDados">
+                        <div class="tituloDados">
+                            <h3>Quais dados você deseja capturar?</h3>
+                        </div>
+                        <label>
+                            <input type="checkbox" value="cpu"> CPU
+                        </label>
+                        <label>
+                            <input type="checkbox" value="ram"> RAM
+                        </label>
+                        <label>
+                            <input type="checkbox" value="disco"> DISCO
+                        </label>
+
+                        <button onclick="metricasDados()" id="btn_dados">Selecionar</button>
+                   </div>
+                   <div class="telaExcluir"></div>
                 </div>
             </div>
         </div>
