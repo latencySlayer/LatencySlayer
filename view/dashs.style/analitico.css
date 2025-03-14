@@ -123,7 +123,7 @@
     margin-top: 3vh;
     display: flex;
     align-items: center;
-    gap: 5vw;
+    gap: 3vw;
     height: 5vh;
     width: 75vw;
 }
@@ -178,6 +178,24 @@
     transform: scale(1.05);
     background-color: #816fa7;
   
+}
+
+.cjtSelect{
+    display: flex;
+}
+
+#sltDatacenter{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+}
+
+#labelSelect{
+    font-size: 12px;
+    width: 6vw;
 }
 
 /* KPIS */
