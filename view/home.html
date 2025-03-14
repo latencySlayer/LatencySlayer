@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LatencySlayer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="./img/latencySlayers-removebg-preview 2.png``">
     <link rel="stylesheet" href="./style/header.css">
     <link rel="stylesheet" href="./style/home.css">
@@ -18,6 +21,31 @@
         <!-- Header -->
         <div id="navBar">
             <img src="./img/latencySlayers-removebg-preview 2.png" alt="" class="logo">
+
+            <div class="menu">
+                <i id="btnMenu" class="fa-solid fa-bars"></i>
+                <div style="display: none;" id="containerBtn">
+                    <div class="home">
+                        <i class="fa-solid fa-house"></i>
+                        <span><a href="#secaoHome">Home</a></span>
+                    </div>
+
+                    <div class="home">
+                        <i class="fa-solid fa-circle-info"></i></i>
+                        <a href="#secaoSolucao">Solução</a>
+                    </div>
+
+                    <div class="home">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        <a href="#secaoSobre">Sobre nós</a>
+                    </div>
+                    <div class="home">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        <a href="#secaoContato">Contato</a>
+                    </div>
+                    
+                </div>
+            </div>
             <!-- Home, sobre nós, serviços -->
             <div class="containerBotoes">
                 <a href="#secaoHome">Home</a>
@@ -36,7 +64,7 @@
         <!-- SEÇÃO HOME -->
         <div id="secaoHome" class="containerHome">
             <div class="mainText">
-                <h1>LatencySlayers</h1>
+                <h1>LatencySlayer</h1>
                 <hr class="purpleLine">
                 <p class="subtitulo">Somos uma empresa criada para garantir máximo desempenho em servidores de games. Monitoramos, detectamos e permitimos que  a latência seja eliminada antes que ela afete a jogabilidade.</p>
             </div>
@@ -155,5 +183,24 @@
             navbar.classList.remove("scrolled");
         }
     });
+
+    let botao = document.getElementById('btnMenu')
+    let containerBtn = document.getElementById('containerBtn')
+    let clicked = false
+
+    botao.addEventListener('click', ()=> {
+        if(clicked == false){
+            containerBtn.style.display = "flex"
+            clicked = true
+        }else{
+            clicked = false
+            containerBtn.style.display = "none"
+
+        }
+
+        
+
+
+    })
 
 </script>

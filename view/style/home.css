@@ -2,15 +2,19 @@
     font-family: "DM Sans", serif;
     margin: 0;
     padding: 0;
+    /* overflow-x: hidden; */
 }
 
 html{
     scroll-behavior: smooth;
+    width: 100%;
+
 }
 
 body{
     overflow-x: hidden;
 }
+
 
 
 
@@ -33,7 +37,7 @@ body{
 .containerHome{
     background-image: url(../img/bkgDataCenter.svg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 110%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +89,7 @@ h1{
 
 
 .containerSolucao{
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -103,7 +107,7 @@ h1{
     gap: 5px;
     justify-content: center;
     align-items: center;
-    height: 25vh;
+    height: fit-content;
     width: 100vw;
     
 
@@ -141,7 +145,6 @@ h1{
     display: flex;
     justify-content: center; 
     gap: 2rem; 
-    flex-wrap: nowrap;
     max-width: 85vw;
     width: 100vw;
     margin: auto;
@@ -158,7 +161,7 @@ h1{
     padding: 4% 5% 2% 5%;
     border-radius: 5px;
     border-bottom: 5px solid #56408C;
-    width: 100px;
+    width: fit-content;
     height: 55vh;
     text-align: center;
     box-shadow: 2px 1px 15px -5px rgba(176, 174, 174, 0.75);
@@ -167,7 +170,7 @@ h1{
 
 .card h3{
     margin-bottom: 5%;
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Poppins",serif
 }
 
@@ -195,6 +198,7 @@ h1{
 .containerSobre{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #F9F9F9;
     height: 100vh;
@@ -210,7 +214,7 @@ h1{
 .containerSobre img{
     width:500px;
     height: 80%;
-    box-shadow: -80px 40px #3A2E5D;  
+    box-shadow: -20px 20px #3A2E5D;  
     border-radius: 10px;
     
 }
@@ -218,7 +222,7 @@ h1{
     display: flex;
     margin-top: 10vh;
     margin-left: 10vw;
-    height: 60vh;
+    height: 65vh;
     width: 85vw;
     gap: 4vw;
     
@@ -266,14 +270,14 @@ h1{
     align-items: center;
     height: 80vh;
     width: 100vw;
-    gap: 30vw;
+    gap: 30%;
 
 }
 
 .ContatoText{
     display: flex;
     flex-direction: column;
-    width: 33vw;
+    width: 90%;
     margin-left: 10vw;
     gap: 20px;
 }
@@ -321,7 +325,7 @@ h1{
 .footer{
     display: flex;
     color: white;
-    gap: 60vw;
+    gap: 30%;
     width: 100vw;
     height: 20vh;
     background-image: url(../img/tst.png);
@@ -368,6 +372,351 @@ h1{
     transition: 0.3s;
 }
 
+/* Responsividade */
 
 
+
+@media (min-width: 1028px) and (max-width: 1420px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+
+    .cardsSolucao{
+        overflow-x: scroll;
+        padding: 20px;
+        justify-content: start;
+    }
+
+    .card{
+        height: 65vh;
+    }
+
+    .card h3{
+        font-size: 30px;
+    }
+    
+    .card p{
+        font-weight: 300;
+        color: #000;
+        font-size: 20px;
+        width: 300px;
+    }
+
+    .containerHome{
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        background-size: 180%;
+        background-position: center;
+    }
+/* 
+    .containerHome::before {
+        height: 60vh;
+    } */
+
+
+    .sobreText{
+        align-self: flex-start;
+    }
+
+    .containerSobre{
+        flex-direction: column;
+    }
+
+    .elementsSobre{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sobreText{
+        align-self: center;
+    }
+
+    .divImg{
+        margin-top: 20%;
+    }
+
+    .divImg img{
+        margin: 50px;
+    }
+
+    .ContatoText{
+        margin: 2%;
+    }
+
+    .ContatoText p{
+        font-size: 20px;
+    }
+
+    .footer{
+        gap: 50%;
+    }
+}
+
+@media (min-width: 870px) and (max-width: 1027px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .cardsSolucao{
+        overflow-x: scroll;
+        padding: 20px;
+        justify-content: start;
+    }
+
+    .card{
+        height: 55vh;
+    }
+
+    .containerHome{
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        background-size: 200%;
+        background-position: center;
+    }
+
+    .containerHome::before {
+        height: inherit;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    .containerHome p{
+        font-size: 20px;
+    }
+
+    .card h3{
+        font-size: 25px;
+    }
+    
+    .card p{
+        font-weight: 300;
+        color: #000;
+        font-size: 20px;
+        width: 300px;
+    }
+    .containerSobre{
+        flex-direction: column;
+    }
+
+    .elementsSobre{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sobreText{
+        align-self: center;
+    }
+
+    .divImg{
+        margin-top: 20%;
+    }
+
+    .divImg img{
+        margin: 50px;
+    }
+
+    .ContatoText{
+        margin: 2%;
+    }
+
+    .ContatoText p{
+        font-size: 20px;
+    }
+
+    .footer{
+        gap: 50%;
+    }
+
+}
+
+@media (min-width: 400px) and (max-width: 869px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+
+
+    .containerHome{
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        background-size: 220%;
+        background-position: center;
+    }
+
+    .containerSolucao{
+        height: fit-content;
+        margin-bottom: 5%;
+    }
+
+    .cardsSolucao{
+        flex-wrap: wrap;
+        /* text-align: center; */
+    }
+
+    #cardContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cardContent p{
+        font-size: 20px;
+    }
+
+    .card{
+        text-align: center;
+    }
+
+    .containerSobre{
+        flex-direction: column;
+        width: 100vw;
+        height: 120vh;
+
+    }
+
+    .containerSobre button{
+        width: 100%;
+        padding: 5%;
+    }
+
+    .elementsSobre{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        margin: 5% 0 0 15%;
+    }
+
+    .containerContato{
+        gap: 20%;
+    }
+
+    .sobreText{
+        align-self: center;
+    }
+
+  
+
+    .divImg img{
+        margin: 50px;
+    }
+
+    .ContatoText{
+        padding: 1%;
+        margin: 0;
+    }
+
+    .contatos{
+        padding: 5px;
+    }
+
+    .ContatoText p{
+        font-size: 20px;
+    }
+
+    .footer{
+        gap: 40%;
+        width: 100vw;
+    }
+
+    .btnPurple{
+        width: 50%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 729px){
+    .containerHome{
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        background-size: 280%;
+        background-position: center;
+    }
+
+    .mainText h1{
+        font-size: 50px;
+    }
+
+    .card img{
+        /* width: 50px;
+        height: 50px; */
+        border-radius: 10px;
+        align-self: left;
+        margin-bottom: 5%;
+    }
+
+    .divImg{
+        align-self: flex-start;
+    }
+
+    .divImg img{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .containerSobre{
+        /* height: fit-content; */
+        /* justify-content: flex-start; */
+    }
+
+
+    .elementsSobre{
+        margin-left: 5%;
+        height: fit-content;
+    }
+    .containerContato{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .contatoText{
+        width: 90%;
+    }
+
+
+}
+
+
+
+@media(min-width: 400px) and (max-width: 500px){
+
+    h1{
+        font-size: 50px;
+    }
+
+    .containerHome{
+
+        background-size: 400%;
+    }
+    
+    .footer{
+        gap: 20%;
+    }
+
+
+}
+
+@media(min-width: 500px) and (max-width: 600px){
+    .containerHome{
+        background-size: 330%;
+    }
+
+    .footer{
+        width: 100vw;
+        gap: 20%;
+    }
+}
 
