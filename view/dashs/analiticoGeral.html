@@ -46,6 +46,12 @@
                     </div>
                     <button class="btnHead" onclick="pesquisar()">Visualizar</button>
                 </div>
+                <div class="cjtSelect">
+                    <span class="titulo" id="labelSelect"> SELECIONE O DATACENTER:</span>
+                    <select  id="sltDatacenter">
+                        <option value="haddocklobos">Rua Haddock Lobo</option>
+                    </select>
+                </div>
             </div>
 
             <!-- KPI's SUPERIOR -->
@@ -53,29 +59,29 @@
 
                 <div class="kpisSuperior">
                     <div class="kpi">
-                        <span class="kpiTitle"> SERVIDOR COM MAIS <b>ALERTAS</b> </span>
+                        <span class="kpiTitle"> SERVIDOR COM <b style="color: red;">MAIS ALERTAS</b> </span>
                         <p class="kpiData" id="servMaisAlerta">SV003</p>
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> SERVIDOR COM MENOS <b>ALERTAS</b> </span>
+                        <span class="kpiTitle"> SERVIDOR COM <b style="color: limegreen;">MENOS ALERTAS</b> </span>
                         <p class="kpiData" id="servMenosAlerta">SV001</p>
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> SERVIDOR COM MAIOR <b>LATÊNCIA</b> MÉDIA </span>
+                        <span class="kpiTitle"> SERVIDOR COM <b style="color: red;">MAIOR LATÊNCIA</b> MÉDIA </span>
                         <p class="kpiData" id="servMaiorLatencia">SV001</p>
                     </div>
                 </div>
 
                 <div class="kpisInferior">
                     <div class="kpi">
-                        <span class="kpiTitle"> SERVIDOR COM MAIOR <b>CPU</b> MÉDIA </span>
+                        <span class="kpiTitle"> SERVIDOR QUE <b style="color: red;">MAIS</b> UTILIZA RECURSOS </span>
                         <p class="kpiData" id="servMaiorCpu">SV003</p>
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> SERVIDOR COM MAIOR <b>RAM</b> MÉDIA </span>
+                        <span class="kpiTitle"> SERVIDOR QUE <b style="color: limegreen;">MENOS</b> UTILIZA RECURSOS </span>
                         <p class="kpiData" id="servMaiorRam">SV002</p>
                     </div>
                 </div>
@@ -85,12 +91,12 @@
              <div class="graficos">
                 
                 <div class="graficoIdv">
-                    <span class="titulo">Número de alertas dos servidores no ultimo ano (%)</span>
+                    <span class="titulo">Número de alertas dos servidores no ultimo ano</span>
                     <canvas id="myChart" class="chartIdv"></canvas>
                 </div>
                  
                 <div class="graficoIdv">
-                    <p class="titulo">Componentes mais utilizados dentre os servidores (%)</p>
+                    <p class="titulo">Servidores que possuem maior nível de uso</p>
                     <canvas id="myChart2" class="chartIdv"></canvas>
                 </div>
              </div>
@@ -177,17 +183,17 @@
             labels: componentes,
             datasets: [
                 {
-                    label: "CPU",
+                    label: "SV001",
                     data: [12], // Valores fixos para o servidor 1
                     backgroundColor: "#44395F",
                 },
                 {
-                    label: "RAM",
+                    label: "SV002",
                     data: [30], // Valores fixos para o servidor 2
                     backgroundColor: "#A396C3",
                 },
                 {
-                    label: "Rede",
+                    label: "SV003",
                     data: [80], // Valores fixos para o servidor 3
                     backgroundColor: "#EB99E5",
                 }

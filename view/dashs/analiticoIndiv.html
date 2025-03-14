@@ -58,31 +58,31 @@
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> COMPONENTE <b style="color: green;">MENOS</b> REQUISITADO </span>
+                        <span class="kpiTitle"> COMPONENTE <b style="color: limegreen;">COM MENOS</b> ALERTAS </span>
                         <p class="kpiData" id="componenteMenosReq">REDE</p>
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> COMPONENTE <b style="color: red;">MAIS</b> REQUISITADO </span>
+                        <span class="kpiTitle"> COMPONENTE <b style="color: red;">COM MAIS</b> ALERTAS </span>
                         <p class="kpiData" id="componenteMaisReq">CPU </p>
                     </div>
                 </div>
 
                 <div class="kpisInferior">
                     <div class="kpi">
-                        <span class="kpiTitle"> MÉDIA DE UTILIZAÇÃO CPU (%)<br>Ultimos 30 dias: </span>
+                        <span class="kpiTitle"> MÉDIA DE UTILIZAÇÃO <b>CPU</b> (%)<br>Ultimos 30 dias: </span>
                         <p class="kpiData" id="mediaCpu" style="color: red;">80%</p>
                         <span class="kpiTitle"> Paramêtro de alerta: <b style="color: red;">75%</b> </span>
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> MÉDIA DE UTILIZAÇÃO RAM (%)<br>Ultimos 30 dias: </span>
+                        <span class="kpiTitle"> MÉDIA DE UTILIZAÇÃO <b>RAM</b> (%)<br>Ultimos 30 dias: </span>
                         <p class="kpiData" id="mediaRam">60%</p>
                         <span class="kpiTitle"> Paramêtro de alerta: <b style="color: red;">85%</b> </span>
                     </div>
 
                     <div class="kpi">
-                        <span class="kpiTitle"> MÉDIA DE UTILIZAÇÃO REDE (%)<br>Ultimos 30 dias: </span>
+                        <span class="kpiTitle"> MÉDIA DE UTILIZAÇÃO <b>REDE</b> (%)<br>Ultimos 30 dias: </span>
                         <p class="kpiData" id="mediaRede">40%</p>
                         <span class="kpiTitle"> Paramêtro de alerta: <b style="color: red;">60%</b> </span>
                     </div>
@@ -155,7 +155,7 @@ const ctx2 = document.getElementById('myChart2');
             datasets: [
                 {
                     label: "RAM",
-                    data: [12, 15, 10, 9, 22, 18, 17, 20, 19, 21, 16, 14], // Valores fixos para o servidor 1
+                    data: [95, 78, 45, 60, 82, 47, 56, 71, 62, 58, 64, 49], // Valores fixos para o servidor 1
                     borderColor: "#44395F",
                     backgroundColor: "rgba(68, 57, 95, 0.7)",
                     borderWidth: 2,
