@@ -1,58 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Cargo</title>
+    <title>Cadastro/Login</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./style/cadastroCargo.css">
+    <link rel="stylesheet" href="./style/cadastro.css">
 </head>
-<body onload="usuarios()">
-    <main>
-        <div class="navbar"></div>
-        <div class="container">
-            <div class="titulo">
-                <h1>Usuários</h1>
-            </div>
-            <hr>
-            <div class="segundaCamada">
-                <div class="barraPesquisa">
-                    Pesquisar por nome: <input oninput="pesquisa()" type="text" id="ipt_pesquisa"> <i class='bx bx-search-alt-2' ></i>
-                </div>
-            </div>
-            <hr>
-            <div class="quadroMaquinas">
-                <div class="tituloMaquina">
-                    <h1>Usuários Cadastradas</h1>
-                </div>
-                <div class="usuarios">
-                    <div class="telaDados">
-                        <div class="tituloDados">
-                            <h3>Qual o cargo desse usuário?</h3>      <i class='bx bx-x-circle'></i>
-                        </div>
-                        <label>
-                            <select id="slt_cargo">
-                                <option value="suporte">Suporte de Sistema</option>
-                                <option value="analista">Analista de Sistema</option>
-                            </select>
-                        </label>
 
-                        <button onclick="mudarCargo()" id="btn_cargo">Selecionar</button>
-                   </div>
-                   <div class="telaExcluir"></div>
-                    <table>
-                        <tr>
-                        <th>Nome usuário</th>
-                        <th>Nome empresa</th>
-                        <th>Data Cadastro</th>
-                        <th>Cargo</th>
-                        </tr>
-                    </table>
-                   
+<body onload="listarEmpresas()">
+
+    <div class="container">
+        <div class="formulario login">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input">
+                    <input id="email_ipt" type="text" placeholder="Email do usuário" required>
+                    <i class='bx bxs-user'></i>
                 </div>
+                <div class="input">
+                    <input id="senha_ipt" type="text" placeholder="Senha" required>
+                    <i class='bx bx-lock'></i>
+                </div>
+                <div class="esqueci_senha">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+                <button onclick="entrar()" type="button" class="btn">Login</button>
+            </form>
+        </div>
+
+
+        <div class="formulario cadastrar">
+            <form action="">
+                <h1>Cadastrar</h1>
+                <div class="input">
+                    <input id="nome_ipt" type="text" placeholder="Nome" required>
+                    <i class='bx bx-info-circle'></i>
+                </div>
+                <div class="input">
+                    <input id="email_ipt2" type="email" placeholder="E-mail" required>
+                    <i class='bx bxl-gmail'></i>
+                </div>
+                <div class="input">
+                    <input id="cpf_ipt" type="co" placeholder="CPF" required>
+                    <i class='bx bxl-gmail'></i>
+                </div>
+                <div class="input">
+                    <input id="codigo_ipt" type="text" placeholder="Codigo Empresa" required>
+                    <i class='bx bx-lock'></i>
+                </div>
+                <div class="input">
+                    <input id="senha_ipt2" type="text" placeholder="Senha" required>
+                    <i class='bx bx-lock'></i>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Confirme a sua senha" required>
+                    <i class='bx bx-lock' ></i>
+                </div>
+
+                <button onclick="cadastrar()" type="button" class="btn">Cadastrar</button>
+            </form>
+        </div>
+
+
+        <div class="alternar_formulario">
+            <div class="alternar_informacao alternar_esquerda">
+                <h1>Olá, seja bem vindo!</h1>
+                <p>Não possui uma conta ainda?</p>
+                <button class="btn btn_cadastro">Cadastre-se</button>
             </div>
         </div>
-    </main>
-    <script src="./script/cadastroCargo.js"></script>
+
+        <div class="alternar_formulario">
+            <div class="alternar_informacao alternar_direita">
+                <h1>Ola novamente!</h1>
+                <p>Já possui uma conta ainda?</p>
+                <button onclick="entrar()" class="btn btn_login">Login</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./script/cadastro.js"></script>
 </body>
 </html>

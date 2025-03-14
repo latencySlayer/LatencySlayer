@@ -52,7 +52,6 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var cpf = req.body.cpfServer;
-    var cargo = req.body.cargoServer;
     var senha = req.body.senhaServer;
     var fkEmpresa = req.body.idEmpresaVincularServer;
 
@@ -69,7 +68,7 @@ function cadastrar(req, res) {
         // Select de validação de email
         /* Passou? entao cadastra /// Não passou? então retorna pro front o erro  */
 
-        usuarioModel.cadastrar(nome, email, cpf, cargo, senha, fkEmpresa)
+        usuarioModel.cadastrar(nome, email, cpf, senha, fkEmpresa)
             .then(
                 function (resultado) {
                     res.json(resultado);

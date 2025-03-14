@@ -86,8 +86,9 @@ function pesquisa() {
         const tabela = document.querySelector(".maquinas table");
         tabela.innerHTML = `
             <tr>
+                <th>ID</th>
                 <th>Código Máquina</th>
-                <th>Nome Servidor</th>
+                <th>Nome Centro Servidor</th>
                 <th>Data Cadastro</th>
                 <th>Editar</th>
                 <th>Excluir</th>
@@ -96,8 +97,9 @@ function pesquisa() {
         maquinas.forEach(maquina => {
             const linha = document.createElement("tr");
             linha.innerHTML = `
+                <td>${maquina.fkCentroServidor}</td>
                 <td>${maquina.codigoMaquina}</td>
-                <td>LatencySlayer</td>
+                <td>${maquina.nome}</td>
                 <td>${maquina.dataRegistro}</td>
                 <td class='ativarDados' style="cursor: pointer">✏️ Edite aqui</td>
                 <td class='ativarExcluir' style="cursor: pointer">🗑️ Exclua aqui</td>
@@ -121,8 +123,9 @@ function maquinas() {
         const tabela = document.querySelector(".maquinas table");
         tabela.innerHTML = `
             <tr>
+                <th>ID</th>
                 <th>Código Máquina</th>
-                <th>Nome Servidor</th>
+                <th>Nome Centro Servidor</th>
                 <th>Data Cadastro</th>
                 <th>Editar</th>
                 <th>Excluir</th>
@@ -131,8 +134,9 @@ function maquinas() {
         maquinas.forEach(maquina => {
             const linha = document.createElement("tr");
             linha.innerHTML = `
+                <td>${maquina.fkCentroServidor}</td>
                 <td>${maquina.codigoMaquina}</td>
-                <td>LatencySlayer</td>
+                <td>${maquina.nome}</td>
                 <td>${maquina.dataRegistro}</td>
                 <td class='ativarDados' style="cursor: pointer">✏️ Edite aqui</td>
                 <td class='ativarExcluir' style="cursor: pointer">🗑️ Exclua aqui</td>

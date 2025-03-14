@@ -120,11 +120,12 @@ function pesquisaUsers(req, res) {
 
 function cargoUsers(req, res) {
     var cargo = req.body.cargoServer
+    var idUser = req.body.userIdServer
 
     if (cargo == undefined) {
         res.status(400).send("Seu campo cargo está undefined");
     } else {
-        maquinaModel.cargoUsers(cargo)
+        maquinaModel.cargoUsers(cargo, idUser)
         .then(
             function (resultado) {
                 res.json(resultado);
