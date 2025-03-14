@@ -118,6 +118,29 @@ function pesquisaUsers(req, res) {
     }
 }
 
+function cargoUsers(req, res) {
+    var cargo = req.body.cargoServer
+
+    if (cargo == undefined) {
+        res.status(400).send("Seu campo cargo está undefined");
+    } else {
+        maquinaModel.cargoUsers(cargo)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro de cargos! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage)
+            }
+        );
+    }
+}
 
 module.exports = {
     autenticar,
@@ -125,4 +148,5 @@ module.exports = {
     pesquisa,
     autenticarUsers,
     pesquisaUsers,
+    cargoUsers
   };

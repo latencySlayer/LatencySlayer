@@ -23,4 +23,8 @@ router.get("/usuarios", function (req, res) {
     maquinaController.autenticarUsers(req, res);
 });
 
+router.post("/cargo", function (req, res) {
+    maquinaController.cargoUsers(req, res);
+})
+
 module.exports = router;

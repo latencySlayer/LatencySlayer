@@ -10,7 +10,7 @@ function autenticar() {
 
 function autenticarUsers() {
     var instrucaoSql = `
-       select u.nome, u.cargo, dataRegistro, e.nome as empresa_nome from usuarios as u join empresa as e on fkEmpresa  = idEmpresa;
+       select idUsuarios, u.nome, u.cargo, dataRegistro, e.nome as empresa_nome from usuarios as u join empresa as e on fkEmpresa  = idEmpresa;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -35,7 +35,15 @@ function pesquisa(ipt_pesquisa) {
 function pesquisaUsers(ipt_pesquisa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():")
    
-    var instrucaoSql = `select u.nome, u.cargo, dataRegistro, e.nome as empresa_nome from usuarios as u join empresa as e on fkEmpresa  = idEmpresa where u.nome like '${ipt_pesquisa}%';`
+    var instrucaoSql = `select idUsuarios, u.nome, u.cargo, dataRegistro, e.nome as empresa_nome from usuarios as u join empresa as e on fkEmpresa  = idEmpresa where u.nome like '${ipt_pesquisa}%';`
+    console.log( instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function cargoUsers(cargo) {
+    console.log("ACESSEI O MAQUINA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():")
+   
+    var instrucaoSql = `UPDATE;`
     console.log( instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -46,4 +54,5 @@ module.exports = {
    pesquisa,
    autenticarUsers,
    pesquisaUsers,
+   cargoUsers
 };
