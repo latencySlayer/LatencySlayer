@@ -15,6 +15,21 @@ function autenticar(req, res) {
         );
 }
 
+function autenticarUsers(req, res) {
+    maquinaModel.autenticarUsers()
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("houve um erro ao puxar dados ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 function cadastrar(req, res) {
     var codigo = req.body.codigoServer
     var ram = req.body.ramServer
@@ -78,9 +93,36 @@ function pesquisa(req, res) {
     }
 }
 
+function pesquisaUsers(req, res) {
+    var ipt_pesquisa = req.body.pesquisaServer
+
+    if (ipt_pesquisa == undefined) {
+        res.status(400).send("Seu campo pesquisa está undefined!");
+    } else {
+
+        maquinaModel.pesquisaUsers(ipt_pesquisa)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a pesquisa! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 
 module.exports = {
     autenticar,
     cadastrar,
-    pesquisa
+    pesquisa,
+    autenticarUsers,
+    pesquisaUsers,
   };

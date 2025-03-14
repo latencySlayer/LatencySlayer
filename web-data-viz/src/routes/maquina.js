@@ -11,8 +11,16 @@ router.post("/pesquisa", function (req, res) {
     maquinaController.pesquisa(req, res);
 })
 
+router.post("/pesquisaUsers", function (req, res) {
+    maquinaController.pesquisaUsers(req, res);
+})
+
 router.get("/maquinas", function (req, res) {
     maquinaController.autenticar(req, res);
+});
+
+router.get("/usuarios", function (req, res) {
+    maquinaController.autenticarUsers(req, res);
 });
 
 module.exports = router;

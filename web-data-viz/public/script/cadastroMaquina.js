@@ -1,11 +1,27 @@
-const btnCadastrar = document.querySelector('.cadastrarMaquina')
-const telaCadastro = document.querySelector('.telaCadastro')
+lista_maquinas = [];
+const btnCadastrar = document.querySelector('.cadastrarMaquina');
+const telaCadastro = document.querySelector('.telaCadastro');
+const fechar = document.querySelector('.bx bx-x-circle')
+const telaDados = document.querySelector('.telaDados')
+
+fechar.addEventListener('click', () => {
+    telaDados.classList.remove('ativadoDados')
+})
+    
+// const telaExcluir = document.querySelector('.telaExcluir');
+// const alocarDados = document.querySelector('ativarDados');
+// alocarDados.addEventListener('click', () => {
+// telaDados.classList.add('ativadoDados');
+// });
+
+// document.getElementById('ativarExcluir').addEventListener('click', () => {
+// telaExcluir.classList.add('ativadoExcluir');
+// });
 
 btnCadastrar.addEventListener('click', () => {
     telaCadastro.classList.add('ativado');
 });
 
-lista_maquinas = [];
 
 function cadastrar() {
     var codigoVar = Number(codMaq.value);
@@ -83,8 +99,8 @@ function pesquisa() {
                 <td>${maquina.codigoMaquina}</td>
                 <td>LatencySlayer</td>
                 <td>${maquina.dataRegistro}</td>
-                <td id='ativarDados' style="cursor: pointer">✏️ Edite aqui</td>
-                <td id='ativarExcluir' style="cursor: pointer">🗑️ Exclua aqui</td>
+                <td class='ativarDados' style="cursor: pointer">✏️ Edite aqui</td>
+                <td class='ativarExcluir' style="cursor: pointer">🗑️ Exclua aqui</td>
             `;
             tabela.appendChild(linha);
         });
@@ -118,22 +134,17 @@ function maquinas() {
                 <td>${maquina.codigoMaquina}</td>
                 <td>LatencySlayer</td>
                 <td>${maquina.dataRegistro}</td>
-                <td id='ativarDados' style="cursor: pointer">✏️ Edite aqui</td>
-                <td id='ativarExcluir' style="cursor: pointer">🗑️ Exclua aqui</td>
+                <td class='ativarDados' style="cursor: pointer">✏️ Edite aqui</td>
+                <td class='ativarExcluir' style="cursor: pointer">🗑️ Exclua aqui</td>
             `;
             tabela.appendChild(linha);
-
-            const telaDados = document.querySelector('.telaDados')
-            const telaExcluir = document.querySelector('.telaExcluir')
-
-            document.getElementById('ativarDados').addEventListener('click', () => {
-            telaDados.classList.add('ativadoDados');
-            });
-                
-            document.getElementById('ativarExcluir').addEventListener('click', () => {
-            telaExcluir.classList.add('ativadoExcluir');
-            });
         });
+        const telaDados = document.querySelector('.telaDados');
+
+        document.querySelectorAll('.ativarDados').forEach(classe => {
+        classe.addEventListener('click', () => {
+        telaDados.classList.add('ativadoDados');
+        })}); 
     })
     .catch(erro => {
         console.error("Erro ao buscar máquinas:", erro);

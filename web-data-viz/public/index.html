@@ -3,101 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Maquina</title>
+    <title>Cadastro Cargo</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./style/cadastroMaquina.css">
+    <link rel="stylesheet" href="./style/cadastroCargo.css">
 </head>
-<body onload="maquinas()">
+<body onload="usuarios()">
     <main>
         <div class="navbar"></div>
         <div class="container">
             <div class="titulo">
-                <h1>Maquinas</h1>
+                <h1>Usuários</h1>
             </div>
             <hr>
             <div class="segundaCamada">
-                
-                <div class="cadastrarMaquina">
-                    <button><i class='bx bx-plus-circle'></i>Cadastrar Maquina</button>
-                    
-
-                    <div class="telaCadastro">
-                        <div class="campos">
-                            <label for="codMaq">Código Máquina: </label>
-                            <input type="number" id="codMaq" />
-                        </div>
-    
-                        <div class="campos">
-                            <label for="mRam">Modelo da sua memória Ram: </label>
-                            <input type="text" id="mRam" />
-                        </div>
-    
-                        <div class="campos">
-                            <label for="mDisk">Modelo do seu disco(HD/SSD): </label>
-                            <input type="text" id="mDisk" />
-                        </div>
-    
-                        <div class="campos">
-                            <label for="mCpu">Modelo da sua CPU: </label>
-                            <input type="password" id="mCpu" />
-                        </div>
-    
-                        <div class="btn_cadastro">
-                            <button id="cadastroBtn" class="btn_tela_cadastro" onclick="cadastrar()">Cadastrar</button>
-                        </div>
-
-                        
-    
-                        <div id="aviso"></div>
-                    </div>
-                </div>
-                
                 <div class="barraPesquisa">
-                    Pesquisar por código: <input oninput="pesquisa()" type="text" id="ipt_pesquisa"> <i class='bx bx-search-alt-2' ></i>
+                    Pesquisar por nome: <input oninput="pesquisa()" type="text" id="ipt_pesquisa"> <i class='bx bx-search-alt-2' ></i>
                 </div>
             </div>
             <hr>
             <div class="quadroMaquinas">
                 <div class="tituloMaquina">
-                    <h1>Máquinas Cadastradas</h1>
+                    <h1>Usuários Cadastradas</h1>
                 </div>
-                <div class="maquinas">
-                    <table>
-                        <tr>
-                        <th>Codigo Máquina</th>
-                        <th>Nome Servidor</th>
-                        <th>Data Cadastro</th>
-                        <th>Editar</th>
-                        <th>Excluir</th>
-                        </tr>
-                    </table>
-                   <div class="telaDados">
+                <div class="usuarios">
+                    <div class="telaDados">
                         <div class="tituloDados">
-                            <h3>Quais dados você deseja capturar?</h3>
+                            <h3>Qual o cargo desse usuário?</h3>      <i class='bx bx-x-circle'></i>
                         </div>
                         <label>
-                            <input type="checkbox" value="cpu"> CPU
-                        </label>
-                        <label>
-                            <input type="checkbox" value="ram"> RAM
-                        </label>
-                        <label>
-                            <input type="checkbox" value="disco"> DISCO
+                            <select id="slt_cargo">
+                                <option value="suporte">Suporte de Sistema</option>
+                                <option value="analista">Analista de Sistema</option>
+                            </select>
                         </label>
 
-                        <button onclick="metricasDados()" id="btn_dados">Selecionar</button>
+                        <button onclick="mudarCargo()" id="btn_cargo">Selecionar</button>
                    </div>
                    <div class="telaExcluir"></div>
+                    <table>
+                        <tr>
+                        <th>Nome usuário</th>
+                        <th>Nome empresa</th>
+                        <th>Data Cadastro</th>
+                        <th>Cargo</th>
+                        </tr>
+                    </table>
+                   
                 </div>
             </div>
         </div>
     </main>
-    <script src="./script/cadastroMaquina.js"></script>
+    <script src="./script/cadastroCargo.js"></script>
 </body>
 </html>
-
-
-
-<!-- <div class="headerMaquinas">
-    <div></div>
-</div> -->
