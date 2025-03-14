@@ -12,6 +12,14 @@
     font-family: "Konkhmer Sleokchher", serif;
 }
 
+.red{
+    color: red;
+}
+
+
+.green{
+    color: green;
+}
 .mainPage{
     display: flex;
     height: 100vh;
