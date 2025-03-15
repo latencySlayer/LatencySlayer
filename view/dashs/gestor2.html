@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <link rel="stylesheet" href="../dashs.style/gestor.css">
+        <link rel="stylesheet" href="../dashs.style/gestor2.css">
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Konkhmer+Sleokchher&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>LatencySlayer | Gestão</title>
 </head>
@@ -34,7 +34,7 @@
        
         <!--<div class="SV001">troca do select -->
         <div class="selecao">
-            <h2>Estado de Alertas do servidor 3
+            <h2>Estado de Alertas do servidor 2
            </h2>
         </div>
 
@@ -42,12 +42,12 @@
             <h3>Alertas em aberto ⚠:</h3>
             <div class="alertas-quantidade">
                 
-                <p style="color: rgb(255, 0, 0); font-weight: bold;"> 20 </p>
+                <p style="color: rgb(26, 255, 0); font-weight: bold;"> 0 </p>
             </div>
         </div>
 
         <div class="kpi-aviso">
-            <p>⚠ Servidor em estado crítico </p>
+            <p> Servidor estável </p>
         </div>
 
         <div class="grafico">
@@ -71,7 +71,7 @@
         </div>
         <div class="selecao2">
             <h2>Médias gerais no
-           Servidor 3</h2>
+           Servidor 2</h2>
         </div>
 
         
@@ -79,7 +79,7 @@
         <div class="kpi-qtd-alertas">
             <h3>Componente mais debilitado ⚠:</h3>
             <div class="alertas-quantidade">
-                <p style="color: #ff0000; font-weight: bolder;margin: 15px;"> Disco de Memória </p>
+                <p style="color: purple; font-weight: bolder;margin: 15px;"> CPU </p>
             </div>
         </div>
         <br><br>
@@ -87,7 +87,7 @@
         <div class="kpi-qtd-alertas">
             <h3>Tempo médio de resolução de alertas:</h3>
             <div class="relogio">
-                <p style="color: #44395F; font-weight: bold;"> 10,5 min</p>
+                <p style="color: #44395F; font-weight: bold;"> 5,5 min</p>
             </div>
         </div>
 
@@ -111,7 +111,7 @@
             labels: ['CPU', 'RAM', 'Disk memory', 'Rede'], 
             datasets: [{
                 label: '',
-                data: [25, 15, 40, 30], 
+                data: [5, 3, 2, 1], 
                 backgroundColor: ['purple', '#44395F', 'rgb(255, 0, 0)', '#2E0E55'], 
                 borderColor: 'black', 
                 borderWidth: 1
@@ -147,8 +147,11 @@
     function pesquisar(){
         let maquina = iptMaquina.value
 
-        if(maquina = 'SV003'){
+        if(maquina = 'SV002'){
             window.location.href='gestor2.html'
+        }
+        if(maquina = 'SV003'){
+            window.location.href='gestor.html'
         }
     }
 </script>

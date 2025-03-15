@@ -242,8 +242,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #ffb0b0;
-    color: rgb(255, 0, 0);
+    background-color: #b0ffbcbc;
+    color: #00b806;
     padding:  0.125rem 0.125rem 0.625rem;
     width: 6
     0%;
@@ -251,7 +251,7 @@ body {
     text-align: center;
     border-radius: 1.25rem;
     border-style: double;
-    border-color: #FF0E1E;
+    border-color: #12ff0e;
     margin-top: 1.25rem;
     
 }
@@ -267,9 +267,9 @@ body {
     align-items: center;
     width: 50%; 
     height: 80%; 
-    background-color: #ffb0b0; 
+    background-color: #b0ffbcbc; 
     border-radius: 80%;  
-    border: 5px solid #ff2a2a;  
+    border: 5px solid #2aff31;  
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
      
 }
