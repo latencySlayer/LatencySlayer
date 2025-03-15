@@ -4,12 +4,13 @@ import com.github.javafaker.Faker;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Faker faker = new Faker();
         List<Usuario> listaUsuarios = new ArrayList<>();
-
+        Scanner scanner = new Scanner(System.in);
 
         //INSERINDO DADOS ALEATORIOS COM O FAKER
         listaUsuarios.add(new Usuario("Matheus","989449532","LatencySlayer",2,5));
@@ -69,14 +70,12 @@ public class Main {
         }
         System.out.println("-------------------------");
 
-        System.out.println("\n***Pesquisa binária de nome do USUÁRIO,retornando o indíce do pesquisado");
-        System.out.println("Indice: " +Ordenacao.indiceNomeUser(listaUsuarios,"Matheus"));
+        System.out.println("\n***Informe um NOME para realizar uma pesquisa binária (retorna o índice dentro da lista)");
+        System.out.println("Indice: " +Ordenacao.indiceNomeUser(listaUsuarios,scanner.nextLine()));
 
-        System.out.println("\n***Pesquisa binária de EMPRESA do usuario, retornando o indíce do pesquisado");
-        System.out.println("Indice: " +Ordenacao.indiceEmpresa(listaUsuarios,"GamerTech"));
+        System.out.println("\n***Informe o nome de uma EMPRESA para realizar uma pesquisa binária (retorna o índice dentro da lista)");
+        System.out.println("Indice: " +Ordenacao.indiceEmpresa(listaUsuarios,scanner.nextLine()));
 
-        System.out.println("\n***Pesquisa binária em caso de pesquisar caso NÃO haja a palavra");
-        System.out.println("Indice: " +Ordenacao.indiceEmpresa(listaUsuarios,"Gamer Games"));
 
 
 
