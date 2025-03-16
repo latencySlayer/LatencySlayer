@@ -24,28 +24,44 @@
 
             <div class="menu">
                 <i id="btnMenu" class="fa-solid fa-bars"></i>
-                <div style="display: none;" id="containerBtn">
+            </div>
+
+                <div id="containerBtn">
+                    <div class="menu2">
+                        <i id="btnMenu2" class="fa-solid fa-bars"></i>
+                    </div>
+
                     <div class="home">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-house sideBarBtn"></i>
                         <span><a href="#secaoHome">Home</a></span>
                     </div>
 
                     <div class="home">
-                        <i class="fa-solid fa-circle-info"></i></i>
+                        <i class="fa-solid fa-circle-info sideBarBtn"></i></i>
                         <a href="#secaoSolucao">Solução</a>
                     </div>
 
                     <div class="home">
-                        <i class="fa-solid fa-pen-nib"></i>
+                        <i class="fa-solid fa-users-rectangle sideBarBtn"></i>
                         <a href="#secaoSobre">Sobre nós</a>
                     </div>
                     <div class="home">
-                        <i class="fa-solid fa-pen-nib"></i>
+                        <i class="fa-solid fa-address-book sideBarBtn"></i>
                         <a href="#secaoContato">Contato</a>
                     </div>
+                    <div class="home cadastro">
+                        <i class="fa-solid fa-user-large sideBarBtn"></i>
+                        <a href="#">Login</a>
+                    </div>
+                    <div class="home cadastro">
+                        <i class="fa-solid fa-right-to-bracket sideBarBtn"></i>
+                        <a href="#">Cadastro</a>
+                    </div>
+                    <!-- <button onclick="window.location='cadastro.html'">Login</button>
+                    <button onclick="window.location='cadastro.html'">Cadastro</button> -->
+
                     
                 </div>
-            </div>
             <!-- Home, sobre nós, serviços -->
             <div class="containerBotoes">
                 <a href="#secaoHome">Home</a>
@@ -184,20 +200,46 @@
     let botao = document.getElementById('btnMenu')
     let containerBtn = document.getElementById('containerBtn')
     let clicked = false
+    let clicked2 = false
+
+    window.addEventListener('resize', () => {
+    if (window.innerWidth > 870) { 
+        containerBtn.style.display = "none"
+        botao.style.display = "block";
+        console.log('teste')
+    }
+});
+
 
     botao.addEventListener('click', ()=> {
-        if(clicked == false){
             containerBtn.style.display = "flex"
+            botao.style.display = "none"
+            containerBtn.classList.add('animation1')
+            containerBtn.classList.remove('animation2')
             clicked = true
-        }else{
-            clicked = false
-            containerBtn.style.display = "none"
-
-        }
-
-        
-
-
     })
+
+    let botao2 = document.getElementById('btnMenu2')
+    botao2.addEventListener('click', ()=> {
+        containerBtn.classList.remove('animation1')
+        containerBtn.classList.add('animation2')
+        setTimeout(() => {
+            containerBtn.style.display = "none"
+        }, 450);
+
+        setTimeout(() => {
+            botao.style.display = "block"
+        }, 500);
+    })
+
+    let cadastro = document.querySelectorAll('.cadastro');
+
+    cadastro.forEach(item => {
+        item.addEventListener('click', () => {
+            window.location.href = 'cadastro.html';
+        });
+    });
+
+    
 
 </script>
