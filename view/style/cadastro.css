@@ -7,12 +7,35 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(90deg, #56408c, #3a2e52);
+} */
+
+body {
+    background: linear-gradient(90deg, #56408c, #3a2e52);
+}
+
+#navBar{
+    margin-bottom: 10%;
+    position: absolute;
+}
+
+#containerBtn{
+    z-index: 9999;
+    position: absolute;
+
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh -13vh;
+    /* background: linear-gradient(90deg, #56408c, #3a2e52); */
 }
 
 .container { 
@@ -22,7 +45,7 @@ body {
     background: #fff;
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-    margin: 20px;
+    margin: 10% 20px 20px 20px;
     overflow: hidden;
 }
 
