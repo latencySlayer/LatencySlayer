@@ -1,5 +1,5 @@
-1- Após criar a EC2, envie o diretório por meio do comando scp
-scp -i chave-pem -r noome-diretorio user@ip:~/
+1- Após criar a EC2, envie o diretório "configEC2" por meio do comando scp
+scp -i chave-pem -r nome-diretorio user@ip:~/
 
 2 - Rode o script install.sh com o comando sh e siga os passos
 comando: bash install.sh
