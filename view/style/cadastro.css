@@ -7,6 +7,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #56408c, #3a2e52);
+} */
+
 body {
     background: linear-gradient(90deg, #56408c, #3a2e52);
 }
@@ -73,7 +81,7 @@ form {
 }
 
 .container h1 {
-    font-size: 24px;
+    font-size: 36px;
     margin: -10px 0;
 }
 
@@ -84,7 +92,7 @@ form {
 
 .input input {
     width: 100%;
-    padding: 13px 50px 5px 5px;
+    padding: 13px 50px 13px 20px;
     background: #eee;
     border-radius: 8px;
     border: none;
