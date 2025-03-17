@@ -88,30 +88,37 @@
                 <form action="">
                     <h1>Cadastrar</h1>
                     <div class="input">
-                        <input type="text" placeholder="CPF" required>
+                        <input id="nome_ipt" type="text" placeholder="Nome" required>
                         <i class='bx bx-info-circle'></i>
                     </div>
                     <div class="input">
-                        <input type="email" placeholder="E-mail" required>
+                        <input id="email_ipt2" type="email" placeholder="E-mail" required>
                         <i class='bx bxl-gmail'></i>
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="Senha" required>
+                        <input id="cpf_ipt" type="co" placeholder="CPF" required>
+                        <i class='bx bx-info-circle'></i>
+                    </div>
+                    <div class="input">
+                        <input id="codigo_ipt" type="text" placeholder="Codigo Empresa" required>
+                        <i class='bx bx-lock'></i>
+                    </div>
+                    <div class="input">
+                        <input id="senha_ipt2" type="text" placeholder="Senha" required>
                         <i class='bx bx-lock'></i>
                     </div>
                     <div class="input">
                         <input type="text" placeholder="Confirme a sua senha" required>
-                        <i class='bx bx-lock'></i>
+                        <i class='bx bx-lock' ></i>
                     </div>
 
-                    <button type="button" class="btn">Cadastrar</button>
+                    <button onclick="cadastrar()" type="button" class="btn">Cadastrar</button>
                 </form>
             </div>
 
 
             <div class="alternar_formulario">
                 <div class="alternar_informacao alternar_esquerda">
-                    <h1>Olá, seja bem vindo!</h1>
                     <p>Não possui uma conta ainda?</p>
                     <button class="btn btn_cadastro">Cadastre-se</button>
                 </div>

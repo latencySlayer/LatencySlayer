@@ -12,6 +12,8 @@ botaoLogin.addEventListener('click', () => {
     container.classList.remove('ativado');
 });
 
+
+
 // --------------- Sessão Cadastro -----------------
 
 let arrayEmpresas = [];
@@ -278,7 +280,17 @@ function entrar() {
             sessionStorage.CARGO_USUARIO = json.cargo;
             sessionStorage.ID_EMPRESA = json.fkempresa;
 
+<<<<<<< Updated upstream
             window.location = "./home.html"
+=======
+                if (resposta.cargo == "analista") {
+                    window.location = "./dashs/analiticoGeral.html"
+                } else if (resposta.cargo == "suporte") {
+                    window.location = "./dashs/suporte.html"
+                } else if (resposta.cargo == "gestor") {
+                    window.location = "./dashs/gestor.html"
+                }
+>>>>>>> Stashed changes
 
         })
 
