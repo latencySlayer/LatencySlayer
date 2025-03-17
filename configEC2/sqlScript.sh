@@ -84,6 +84,14 @@ CREATE TABLE alerta (
 CREATE USER '$USER_BANCO'@'%' IDENTIFIED BY '$SENHA_BANCO';
 GRANT ALL PRIVILEGES ON $BANCO_DE_DADOS.* TO '$USER_BANCO'@'%';
 FLUSH PRIVILEGES;
+
+CREATE user 'insert_user'@'%' identified by '123';
+GRANT insert on $BANCO_DE_DADOS.* to 'insert_user'@'%';
+FLUSH privileges;
+
+CREATE user 'select_user'@'%' identified by '123';
+GRANT select on $BANCO_DE_DADOS.* to 'select_user'@'%';
+FLUSH privileges;
 "
 
 # Rodar o script SQL no MySQL
