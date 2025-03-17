@@ -12,6 +12,49 @@ botaoLogin.addEventListener('click', () => {
     container.classList.remove('ativado');
 });
 
+window.addEventListener("scroll", function () {
+    let navbar = document.getElementById("navBar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+let botao = document.getElementById('btnMenu')
+let containerBtn = document.getElementById('containerBtn')
+let clicked = false
+let clicked2 = false
+
+window.addEventListener('resize', () => {
+if (window.innerWidth > 870) { 
+    containerBtn.style.display = "none"
+    botao.style.display = "block";
+    console.log('teste')
+}
+});
+
+
+botao.addEventListener('click', ()=> {
+        containerBtn.style.display = "flex"
+        botao.style.display = "none"
+        containerBtn.classList.add('animation1')
+        containerBtn.classList.remove('animation2')
+        clicked = true
+})
+
+let botao2 = document.getElementById('btnMenu2')
+botao2.addEventListener('click', ()=> {
+    containerBtn.classList.remove('animation1')
+    containerBtn.classList.add('animation2')
+    setTimeout(() => {
+        containerBtn.style.display = "none"
+    }, 450);
+
+    setTimeout(() => {
+        botao.style.display = "block"
+    }, 500);
+})
 // --------------- Sessão Cadastro -----------------
 
 let arrayEmpresas = [];
@@ -278,7 +321,13 @@ function entrar() {
             sessionStorage.CARGO_USUARIO = json.cargo;
             sessionStorage.ID_EMPRESA = json.fkempresa;
 
-            window.location = "./home.html"
+            if (json.cargo == "analista") {
+                window.location = "./dashs/analiticoGeral.html"
+            } else if (json.cargo == "suporte") {
+                window.location = "./dashs/suporte.html"
+            } else if (json.cargo == "gestor") {
+                window.location = "./dashs/gestor.html"
+            }
 
         })
 
