@@ -72,7 +72,8 @@ CREATE TABLE maquina_componentes (
 
 CREATE TABLE alerta (
     idAlerta INT PRIMARY KEY AUTO_INCREMENT,
-    dataAlerta DATETIME,
+    dataAlerta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    tipo varchar(45),
     fkMaquinaComponente INT,
     fkMaquina INT,
     fkComponente INT,
