@@ -1,8 +1,5 @@
 ## Hi there 👋
 
-<!--
-**latencySlayer/LatencySlayer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
 #Instruções para commit:
 
 1- git status
