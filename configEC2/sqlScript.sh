@@ -86,11 +86,11 @@ GRANT ALL PRIVILEGES ON $BANCO_DE_DADOS.* TO '$USER_BANCO'@'%';
 FLUSH PRIVILEGES;
 
 CREATE user 'insert_user'@'%' identified by '123';
-GRANT insert on $BANCO_DE_DADOS.* to 'insert_user'@'%';
+GRANT insert on python.* to 'insert_user'@'%';
 FLUSH privileges;
 
 CREATE user 'select_user'@'%' identified by '123';
-GRANT select on $BANCO_DE_DADOS.* to 'select_user'@'%';
+GRANT select on python.* to 'select_user'@'%';
 FLUSH privileges;
 "
 

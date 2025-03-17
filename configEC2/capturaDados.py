@@ -26,9 +26,9 @@ def obter_dados():
     return cpuPercent, memoryPercent, diskPercent
 try:
     mydb = MySQLConnection(
-        host="192.168.1.82",
+        host="54.92.165.184",
         user="insert_user",
-        password="borainserir123",
+        password="123",
         database="python"
     )
     mycursor = mydb.cursor()
@@ -38,9 +38,9 @@ except Error as erro:
 
 try:
     mydb2 = MySQLConnection(
-        host="192.168.1.82",
+        host="54.92.165.184",
         user="select_user",
-        password="boraselecionar123",
+        password="123",
         database="python"
     )
     mycursor2 = mydb2.cursor()
